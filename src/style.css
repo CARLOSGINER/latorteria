@@ -1,0 +1,597 @@
+@font-face {
+    font-family:"old";
+    src:url(../fonts/Oldbrothers.ttf) format('truetype');
+}
+
+@font-face {
+    font-family:'montserrat';
+    src: url(../fonts/Montserrat/Montserrat-Medium.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Festive';
+    src: url(../fonts/Festive.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Ephesis';
+    src: url(../fonts/Ephesis.ttf);
+}
+
+/* -----------GENERAL STYLES--------------------- */
+
+
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+ 
+
+:root {
+    --clr-brandBlue: #005180;
+    --clr-brandBlue_light: #3ab0b4;
+    --clr-brandBlue_light_transp: #3ab0b4b0;
+    --clr-brandSalmon: #E5978B;
+    --clr-brandSalmon_light: #ffb4a8;
+    --clr-brandPink: #F2E1CF;
+    --clr-accent: #5fc231;
+    --clr-accent_light: #94e76d;
+    --clr-light: #fff;
+    --clr-dark: #383838;
+    --clr-shadow: #38383865;
+    --fw-normal:400;
+    --fw-bold:700;
+    --fw-black:900;
+    --ff-brand:old;
+    --ff-common:montserrat;
+    --ff-decorative:Festive;
+    --ff-signature:Ephesis;
+    --ff-accent:impact;
+    --grid-showcase: auto 1fr / 1fr 1fr;
+
+    overflow-x:hidden;
+
+}
+
+.btn {
+    font-family: var(--ff-common);
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    width: 150px;
+    padding: 0.5em;
+    border:none;
+    border-radius: 3em;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    top:0px;
+}
+
+.btn:hover {
+    background-color: var(--clr-brandSalmon_light);
+    color: white;
+    top:-4px;
+    box-shadow: 0px 4px 8px var(--clr-shadow);
+}
+
+
+
+/* ---------GENERAL TYPOGRAPHY------------------- */
+
+h1,h2,h3,p {
+    margin:0;
+    line-height: 1.5;
+    font-family: var(--ff-common);
+}
+
+h1 {
+    font-family: var(--ff-brand);
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.3rem;
+}
+
+
+/* -------------HEADER------------------ */
+
+.container__header {
+    position: relative;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+}
+
+header{
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    justify-content: space-evenly;
+    background-color: var(--clr-brandPink);
+}
+
+.header__logo--img {
+    max-width: 200px;
+    height: auto;
+}
+
+.nav {
+    max-width: 90vw;
+}
+
+.nav ul {
+    display: flex;
+    background-color: var(--clr-brandSalmon_light);
+    border-radius: 5em;
+    margin-top: 20px;
+}
+
+.nav__item {
+    list-style:none;
+    padding: 6px 0px;
+    border-radius: 5em;
+    transition: all 0.3s ease;
+}
+
+.nav__item a{
+    text-decoration: none;
+    color: var(--clr-brandBlue);
+    font-weight: var(--fw-bold);
+    font-size: 1rem;
+    margin: 5px;
+    transition: all 0.2s ease;
+    padding :5px 5px;
+    border-radius: 5em;
+}
+
+.nav__item a:hover {
+    color: white;
+}
+
+
+
+.banner__title {
+    text-align: center;
+    color: var(--clr-brandBlue);
+    margin-top: 50px;
+}
+
+.banner__title span {
+    color:var(--clr-accent_light);
+    text-transform: uppercase;
+}
+
+.banner__title, 
+.banner__title span {
+    position: relative;
+    z-index: 10                 ;
+}
+
+.banner__detail {
+    display: none;
+}
+
+.banner__btn {
+    font-family: var(--ff-accent);
+    text-transform: uppercase;
+    position: relative;
+    z-index: 10;
+    background-color: var(--clr-brandSalmon_light);
+    color: white;
+    display: block;
+    margin:auto;
+    margin-top: 3em;
+}
+
+.header__deco--up {
+    position: absolute;
+    top:0px;
+    right: 0px;
+    width: 100px;
+    height: 250px;
+    background-image: url(../img/deco_01.png);
+}
+
+.header__deco--down {
+    background-image: url(../img/deco_01.png);
+    position: absolute;
+    width: 100%;
+    height: 300px;
+    background-position-x: -100px;
+    top:50vh;
+    left: 0px;
+    background-repeat: no-repeat;
+}
+
+/* --------MAIN------------ */
+
+.parallax {
+    width:100vw;
+    height: 60vh;
+    background-image: url(../img/cupcakes_lejos.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position-x: -30px;
+}
+
+.mainPost {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 125vh;
+    overflow-y: hidden;
+}
+
+.mainPost__info {
+    background-color: var(--clr-brandBlue_light);
+    color:white;
+    text-align: center;
+    padding: 0 1.8em;
+}
+
+.mainPost__info--title,
+.mainPost__info--details {
+    margin:1em 0em;
+    position: relative;
+    z-index: 10;
+}
+
+.mainPost__info--title span{
+    color: var(--clr-accent_light);
+    font-weight: var(--fw-black);
+}
+
+.btn--secondary {
+    background-color: var(--clr-brandPink);
+    color: var(--clr-brandBlue);
+    margin-bottom: 1em;
+}
+
+.mainPost__info--img {
+    width: 100%;
+}
+
+/* ------SHOWCASE---------- */
+
+
+
+.showcase {
+    display:grid;
+    grid-template: var(--grid-showcase);
+    width: 100vw;
+    height: auto;
+    
+}
+
+.container__showcase--heading {
+    width: 100vw;
+    position: relative;
+}
+
+.showcase__title {
+    position: absolute;
+    top:20px;
+    text-align: center;
+    padding: 0.5em 0px 1.5em 0px;
+    font-family: var(--ff-brand);
+    font-size: 3.5rem;
+    text-align: center;
+    color: var(--clr-brandBlue);
+    width: 100vw;
+}
+
+.showcase__heading--deco {
+    width: 300px;
+    height: 250px;
+    grid-area: 1 / 1 / span 2 / span 2;
+}
+
+
+.showcase__cards {
+    grid-column-end: span 2;
+    display: flex;
+    flex-direction: column;    
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    margin: 1em 0em;
+    text-align: center;
+}
+
+.card__title {
+    margin-bottom: 1em;
+    font-family:var(--ff-decorative);
+    font-size: 2rem;
+    background-color: var(--clr-brandSalmon);
+}
+
+.card__photo-01 {
+    background-image: url(../img/pie_limon.jpg);
+}
+
+.card__photo-02 {
+    background-image: url(../img/torta_piña.jpg);
+}
+
+.card__photo-03 {
+    background-image: url(../img/quesillo.jpg);
+}
+
+.card__photo-01,
+.card__photo-02,
+.card__photo-03 {
+    width: 100vw;
+    height: 500px;
+    padding: 1em;
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+}
+
+.card__description {
+    padding: 1em;
+    text-align:justify;
+    text-justify: inter-word;
+}
+
+/* ---------- SUPPORT ------------- */
+
+.support {
+    display: grid;
+    grid-template: 1fr / 1fr 60vw 1fr;
+    margin: 2em 0em 0em 0em;
+    width: 100vw;
+    height: 80vh;   
+}
+
+.support__info {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-self: center;
+    padding:0.8em;
+    background-color: var(--clr-brandBlue);
+
+}
+
+.support__info--title {
+    margin-bottom: 2.3em;
+    font-weight: var(--fw-normal);
+    color: var(--clr-brandSalmon);
+}
+
+.support__info--detail {
+    font-family: var(--ff-brand);
+    font-size: 2rem;
+    color: var(--clr-brandSalmon_light);
+    text-transform: uppercase;
+}
+
+.support__deco--left,
+.support__deco--right {
+    background-image: url(../img/deco_cupcakes_02.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed; 
+}
+
+/* ------- TESTIMONIALS ----------- */
+
+.testimonials {
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 5em;
+}
+
+.container__testimonials--title {
+    position: relative;
+    margin-top: 5em;
+    margin-bottom: 2em;
+}
+
+
+.testimonials img {
+    width: 300pxpx;
+    height: 220px;
+}
+
+.testimonials__title {
+    position: absolute;
+    top: 20px;
+    font-family: var(--ff-brand);
+    color: var(--clr-brandBlue);
+    font-size: 3rem;
+    text-align: center;
+    margin: 1em 15vw;
+}
+
+
+
+.testimonials__person {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0em 3em;
+    margin-bottom: 4em;
+    box-shadow: 0 4px 8px 0 var(--clr-shadow);
+    transition: 0.3s;
+    border-radius: 3em;
+    position: relative;
+    top:0px;
+    background-color: white;
+}
+
+.testimonials__person:hover {
+    top:-5px;
+    box-shadow: 0 2px 8px 0 var(--clr-shadow);
+}
+
+
+.testimonials__person--avatar {
+    width: 8em;
+    height: 8em;
+    border-radius: 50%;
+    background-color: var(--clr-brandSalmon_light);    
+    background-size:cover;
+    background-repeat: no-repeat;
+    margin-top: 2em;
+}
+
+.testimonials__person--social {
+    font-size: 1rem;
+    color:var(--clr-brandSalmon);
+    padding:1em;
+    display: flex;
+}
+
+.testimonials__person--social p {
+    align-self:center ;
+}
+
+.testimonials__person--icon {
+    margin: 0.3em;
+    font-size: 1.5rem;
+}
+
+.person_01 {
+    background-image: url(../img/carlos_giner.JPG);
+    background-position-y: -10px;
+}
+
+.person_02 {
+    background-image: url(../img/Luis_Ocando.png);
+    background-position-y: -10px;
+
+}
+
+.person_03 {
+    background-image: url(../img/alberto_sobal.jpeg);
+}
+
+.testimonials__person--review {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.testimonials__person--review > h3 {
+    padding:2em;
+    font-size: 0.8rem;
+    color: var(--clr-shadow);
+}
+
+.review__p {
+    text-align: justify;
+    text-justify: inter-character;
+} 
+
+.review__name {
+    padding: 0.5em 1em;
+    margin-bottom: 1em;
+    align-self: flex-end;
+    font-family: var(--ff-signature);
+    font-size: 1.2rem;
+    font-weight: var(--fw-bold);
+    color: var(--clr-brandBlue);
+    transform: rotate(-15deg);
+}
+
+/* ----------------CONTACTS -------------- */
+
+.contact {
+    margin-bottom: 5em;
+}
+
+.contact__info {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    gap: 1em;
+    text-align: center;
+    background-color: var(--clr-brandPink);
+    padding:2em;
+}
+
+.contact__info h3 {
+    font-family: var(--ff-brand);
+    font-size: 3rem;
+    color: var(--clr-brandBlue);
+}
+
+.map {
+    width: 100vw;
+    height: 50vh;
+}
+
+
+/* -------------FOOTER ----------------- */
+
+footer {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color:var(--clr-brandBlue);
+}
+
+.footer__logo {
+    width: 60vw;
+}
+
+.footer__nav {
+    margin:1em;
+    display: flex;
+    gap:1em;
+    
+}
+
+.footer__nav ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+
+.footer__nav--item a {
+    text-decoration: none;
+    color: white;
+    font-size: 0.9rem;
+}
+
+.footer__socialmedia i{
+    font-size: 2rem;
+    color: var(--clr-brandPink);
+    padding: 0.2em;
+    margin-top: 2em;
+}
+
+.footer__copy {
+    color: white;
+    font-size: 0.8rem;
+    padding: 5em 0em;
+}
+
+
+/* ------PHONES ROTATED / Narrows heights ------ */
+
+@media only screen and (max-height:540px) {
+    .header__logo--img {
+        max-width: 150px;
+    }
+
+    .banner__title {
+        display: none;
+    }
+}
+
+
+/*  */
