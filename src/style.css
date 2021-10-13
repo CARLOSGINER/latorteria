@@ -70,9 +70,9 @@
 }
 
 .btn:hover {
-    background-color: var(--clr-brandSalmon_light);
+    background-color: var(--clr-accent);
     color: white;
-    top:-4px;
+    /* top:-4px;   todecide */
     box-shadow: 0px 4px 8px var(--clr-shadow);
 }
 
@@ -96,7 +96,14 @@ h2 {
 }
 
 
-/* -------------HEADER------------------ */
+/* ----- HEADER/ BANNER ---- */
+/* ------------------------- */
+/* ------------------------- */
+/* ------------------------- */
+
+
+
+
 
 .container__header {
     position: relative;
@@ -119,10 +126,14 @@ header{
 .header__logo--img {
     max-width: 200px;
     height: auto;
+    display: block;
+    margin:auto;
+    position:relative;
+    z-index: 15;
 }
 
 .nav {
-    max-width: 90vw;
+    max-width: 80vw;
 }
 
 .nav ul {
@@ -154,12 +165,10 @@ header{
     color: white;
 }
 
-
-
 .banner__title {
     text-align: center;
     color: var(--clr-brandBlue);
-    margin-top: 50px;
+    margin: 50px 15px 0px 15px; 
 }
 
 .banner__title span {
@@ -170,19 +179,16 @@ header{
 .banner__title, 
 .banner__title span {
     position: relative;
-    z-index: 10                 ;
+    z-index: 10;
 }
 
-.banner__detail {
-    display: none;
-}
 
 .banner__btn {
     font-family: var(--ff-accent);
     text-transform: uppercase;
     position: relative;
     z-index: 10;
-    background-color: var(--clr-brandSalmon_light);
+    background-color: var(--clr-brandSalmon);
     color: white;
     display: block;
     margin:auto;
@@ -209,7 +215,18 @@ header{
     background-repeat: no-repeat;
 }
 
+
+
+
+
+
 /* --------MAIN------------ */
+/* ------------------------- */
+/* ------------------------- */
+/* ------------------------- */
+
+
+
 
 .parallax {
     width:100vw;
@@ -217,6 +234,7 @@ header{
     background-image: url(../img/cupcakes_lejos.jpg);
     background-size: cover;
     background-attachment: fixed;
+    background-position:center;
     background-position-x: -30px;
 }
 
@@ -224,8 +242,7 @@ header{
     display: flex;
     flex-direction: column;
     width: 100vw;
-    height: 125vh;
-    overflow-y: hidden;
+    height: auto;   
 }
 
 .mainPost__info {
@@ -253,20 +270,31 @@ header{
     margin-bottom: 1em;
 }
 
-.mainPost__info--img {
-    width: 100%;
+.info__container--img {
+    width: 100vw;
 }
 
+.mainPost__info--img {
+    width: 100%;
+    min-height: 540px;
+}
+
+
+
+
 /* ------SHOWCASE---------- */
+/* ------------------------ */
+/* ------------------------ */
+/* ------------------------ */
+
+
 
 
 
 .showcase {
     display:grid;
     grid-template: var(--grid-showcase);
-    width: 100vw;
-    height: auto;
-    
+    width: 100vw;    
 }
 
 .container__showcase--heading {
@@ -329,11 +357,14 @@ header{
 .card__photo-02,
 .card__photo-03 {
     width: 100vw;
-    height: 500px;
-    padding: 1em;
+    max-width: 540px;
+    height: 80vh;
+    min-height:560px ;
+    display: block;
+    margin:auto;
     background-repeat: no-repeat;
     background-size: cover;
-    object-fit: cover;
+    background-position: center;
 }
 
 .card__description {
@@ -581,7 +612,17 @@ footer {
 }
 
 
-/* ------PHONES ROTATED / Narrows heights ------ */
+
+
+
+
+
+
+
+/* --------------PHONES ROTATED / Narrows heights ------------------ */
+/* ----------------------------------------------------------------- */
+/* ----------------------------------------------------------------- */
+
 
 @media only screen and (max-height:540px) {
     .header__logo--img {
@@ -591,7 +632,229 @@ footer {
     .banner__title {
         display: none;
     }
+
+    .banner {
+       position: static;
+       margin: auto;
+    }
+
+    .banner__btn {
+        margin: 0;
+        align-self: center;
+    }
+
+    .banner__img {
+        display: none;
+    }
+}
+
+/* ----------------------------------------------------------------- */
+
+
+
+
+
+
+
+
+
+/*-----  MEDIA QUERIE TILL DESKTOP ------------------------------------  */
+
+@media only screen and (min-width:570px) {
+
+
+
+    /*----------- HEADER /BANNER ------ */
+
+
+
+    p,.nav__item a {
+        font-size: 1rem;
+        font-family: var(--ff-common);
+    }
+
+    .desk__container--nav {
+        width: 100vw;
+        height: auto;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        /* position: absolute; */
+        top: 0px;
+        left: 0px; 
+        position: fixed;
+        z-index: 20;
+    }
+
+    .header__logo--img {
+        display: block;
+        width: 150px;
+    }
+
+    .nav {
+        margin:0px;
+        flex-grow: 1;
+        float: right;
+        position: relative;
+        z-index: 10;
+    }
+
+    .nav ul {
+        display: flex;
+        justify-content: flex-end;
+        background-color: var(--clr-brandPink);
+        margin-top: 0px;
+    }
+
+    /* .nav__item:last-child {
+        margin-right: 50px;
+    } */
+
+    .nav__item a:hover {
+        color: var(--clr-brandBlue_light);
+    }
+
+    .banner__title {
+        font-size: 3.5em;
+        text-align:left ;
+    }
+
+    .banner {
+        /* position: absolute; */
+        top: 16vh;
+        left: 0px;
+        width: 55vw;
+        margin-right: 25vw;
+        /* margin-left: 14vw; */
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    .banner__title span {
+        /* color:rgb(253, 52, 52); todecide*/
+        color:var(--clr-accent_light);  
+    }
+
+    .banner__btn {
+        margin-left: 0px;
+    }
+
+    .banner__img {
+        position: absolute;
+        z-index: 16;
+        margin-top: 30vh;
+        right: 8vw;
+        width: 500px;
+        height: 650px;
+        background-image: url(../img/torta_fresa_png.png);
+        background-position: center;
+        background-size: cover;
+        transform: scaleX(-1);
+    }
+
+    .header__deco--up {
+        background-repeat: repeat;
+        width: 300px;
+        height: 600px;
+        top:100px;
+        z-index: 15;
+    }
+
+    header {
+        background-color: white;
+    }
+
+    .desk__container--nav {
+        background-color: var(--clr-brandPink);
+    }
+    
+    /* -----------PARALLAX ---------------- */
+
+    .parallax {
+        height: 80vh;
+        min-height: 600px;
+        background-size:cover;
+        background-repeat: no-repeat;
+        background-position:center;
+        background-image: url(../img/torta_rosa.jpg);
+    }
+
+    
+
+
+}
+
+/*-----  MEDIA QUERIE IPADS------------------------------------  */
+
+
+@media only screen and (min-width:900px) and (max-width:1120px) {
+    
+    .banner__img {
+        width: 380px;
+        height: 490px;
+    }
+
+    .banner__title {
+        font-size: 3em;
+    }
+
 }
 
 
-/*  */
+@media only screen and (min-width:660px) and (max-width:900px) {
+    
+    .banner__img {
+        width: 300px;
+        height: 390px;
+    }
+
+    .banner__title {
+        font-size: 2.5em;
+    }
+
+    .nav__item:last-child {
+        margin-right: 50px;
+    }
+}
+
+@media only screen and (min-width:570px) and (max-width:690px) {
+    
+    .desk__container--nav {
+        flex-direction: column;
+        margin:2vw;
+    }
+
+    .header__deco--up {
+        width: 100px;
+    }
+
+    .banner__title {
+        top:80px;
+    }
+    
+    .banner__btn {
+        top:80px;
+    }
+
+    .banner__img {
+        width: 250px;
+        height: 300px;
+    }
+
+    .banner__title {
+        font-size: 2.5em;
+    }
+}
+
+@media only screen and (min-width:800px) {
+    .nav {
+        margin-right: 100px;
+    }
+
+    .header__logo--img {
+        margin-left: 100px;
+
+    }
+}
+
