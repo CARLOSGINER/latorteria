@@ -161,10 +161,6 @@ header{
     border-radius: 5em;
 }
 
-.nav__item a:hover {
-    color: white;
-}
-
 .banner__title {
     text-align: center;
     color: var(--clr-brandBlue);
@@ -241,12 +237,12 @@ header{
 .mainPost {
     display: flex;
     flex-direction: column;
-    width: 100vw;
+    /* width: 100vw; */
     height: auto;   
 }
 
 .mainPost__info {
-    background-color: var(--clr-brandBlue_light);
+    background-color: var(--clr-brandSalmon_light);
     color:white;
     text-align: center;
     padding: 0 1.8em;
@@ -260,7 +256,7 @@ header{
 }
 
 .mainPost__info--title span{
-    color: var(--clr-accent_light);
+    color: var(--clr-brandBlue);
     font-weight: var(--fw-black);
 }
 
@@ -270,14 +266,11 @@ header{
     margin-bottom: 1em;
 }
 
-.info__container--img {
+.mainPost__imgContainer {
     width: 100vw;
 }
 
-.mainPost__info--img {
-    width: 100%;
-    min-height: 540px;
-}
+
 
 
 
@@ -292,9 +285,9 @@ header{
 
 
 .showcase {
-    display:grid;
-    grid-template: var(--grid-showcase);
-    width: 100vw;    
+    width: 100vw;
+    display: flex;
+    flex-direction: column;    
 }
 
 .container__showcase--heading {
@@ -410,18 +403,21 @@ header{
 .support__deco--right {
     background-image: url(../img/deco_cupcakes_02.png);
     background-size: cover;
-    background-repeat: no-repeat;
-    background-size: cover;
     background-attachment: fixed; 
+    background-size:auto;
+    background-repeat: repeat;
 }
 
 /* ------- TESTIMONIALS ----------- */
+/* ------- ------------------------- */
+/* ------- ------------------------- */
 
 .testimonials {
     display:flex;
     flex-direction: column;
     text-align: center;
     margin-bottom: 5em;
+    align-items:center;
 }
 
 .container__testimonials--title {
@@ -443,7 +439,7 @@ header{
     color: var(--clr-brandBlue);
     font-size: 3rem;
     text-align: center;
-    margin: 1em 15vw;
+    margin: 1em 5vw;
 }
 
 
@@ -463,8 +459,7 @@ header{
 }
 
 .testimonials__person:hover {
-    top:-5px;
-    box-shadow: 0 2px 8px 0 var(--clr-shadow);
+    box-shadow: 0 5px 15px 0 var(--clr-accent);
 }
 
 
@@ -658,13 +653,9 @@ footer {
 
 
 
-/*-----  MEDIA QUERIE TILL DESKTOP ------------------------------------  */
+/*-----  MEDIA QUERIE IPAD TILL DESKTOP ------------------------------------  */
 
 @media only screen and (min-width:570px) {
-
-
-
-    /*----------- HEADER /BANNER ------ */
 
 
 
@@ -684,12 +675,25 @@ footer {
         left: 0px; 
         position: fixed;
         z-index: 20;
+        background-color: var(--clr-brandPink);
+        transition: all 0.5s ease;
     }
+
+    .changeBackgroundColor {
+        background-color: var(--clr-brandBlue_light);
+    }
+
 
     .header__logo--img {
         display: block;
         width: 150px;
     }
+
+    /* #JS added */
+    .shrink {
+        width: 100px;
+    }
+    
 
     .nav {
         margin:0px;
@@ -706,12 +710,13 @@ footer {
         margin-top: 0px;
     }
 
-    /* .nav__item:last-child {
-        margin-right: 50px;
-    } */
+    /* #JS added */
+    .makeTransparent {
+        background-color:rgba(0, 0, 0, 0) !important;
+    }
 
-    .nav__item a:hover {
-        color: var(--clr-brandBlue_light);
+    .nav__item:hover {
+        background-color: white;
     }
 
     .banner__title {
@@ -765,11 +770,7 @@ footer {
         background-color: white;
     }
 
-    .desk__container--nav {
-        background-color: var(--clr-brandPink);
-    }
-    
-    /* -----------PARALLAX ---------------- */
+
 
     .parallax {
         height: 80vh;
@@ -780,12 +781,12 @@ footer {
         background-image: url(../img/torta_rosa.jpg);
     }
 
-    
+
 
 
 }
 
-/*-----  MEDIA QUERIE IPADS------------------------------------  */
+/*-----  MEDIA QUERIE IPADS AND WEIRD WIDTHS---------  */
 
 
 @media only screen and (min-width:900px) and (max-width:1120px) {
@@ -816,13 +817,23 @@ footer {
     .nav__item:last-child {
         margin-right: 50px;
     }
+
+    .mainPost__info--title {
+        margin:0px;
+    }
+
+    .mainPost__imgContainer {
+        width: 100vw;
+    }
+    
+ 
+
 }
 
 @media only screen and (min-width:570px) and (max-width:690px) {
     
     .desk__container--nav {
         flex-direction: column;
-        margin:2vw;
     }
 
     .header__deco--up {
@@ -847,6 +858,15 @@ footer {
     }
 }
 
+
+
+
+
+
+/* ---------------- ONLY DESKTOP LARGE --------------- */
+
+
+/* de 800px para arriba */
 @media only screen and (min-width:800px) {
     .nav {
         margin-right: 100px;
@@ -854,7 +874,295 @@ footer {
 
     .header__logo--img {
         margin-left: 100px;
+        transition: width 0.5s ease;
+    }
 
+    .mainPost {
+        flex-direction: row;
+        justify-content: center;
+        max-height: 500px;
+        margin:50px 10vw;  
+    }
+
+    .mainPost__info {
+        padding: 0px 0px;
+        min-width: 300px;
+        max-width: 500px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    
+    .mainPost__info--title {
+        font-size: 1.8rem;
+        margin-top: 1em;
+    }
+
+    .mainPost__info--details{
+        padding: 1em 2em;
+        text-align: left;
+    }
+
+    .mainPost button {
+        margin-top: 1em;
+    }
+
+    .mainPost__imgContainer {
+        width: 400px;
+    }
+
+    .mainPost__info--img {
+        max-height: 100%;
+    }    
+
+
+    /* -----------------showcase------------ */
+
+    .wrapper {
+        width: 90%;
+        height: auto;
+        margin:auto;
+    }
+
+    .showcase__title {
+        font-size: 5rem;
+    }
+
+    .showcase__heading--deco {
+        width: 400px;
+    }
+
+    .showcase__cards {
+        max-width: 100vw ;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap:30px;
+        align-self: center;
+    }
+
+    .card {
+        flex-direction: row;
+        box-shadow: 0px 4px 8px var(--clr-shadow);
+        align-items: flex-end;
+        height: 420px;
+        width: 420px;
+        transition: transform 0.5s ease;
+        overflow:hidden;
+    }
+
+    .card__photo-01,
+    .card__photo-02,
+    .card__photo-03,
+    .card__photo-04,
+    .card__photo-05,
+    .card__photo-06{
+       display: none;
+    }
+
+    .card__background01 {
+        background-image: url(../img/pie_limon.jpg);
+    }
+    .card__background02 {
+        background-image: url(../img/torta_piña.jpg);
+        background-position-y:bottom;
+
+    }
+    .card__background03 {
+        background-image: url(../img/tres_leches.jpg);
+    }
+
+    .card__background04 {
+        background-image: url(../img/torta_pinpon.jpg);
+    }
+
+    .card__background05 {
+        background-image: url(../img/cupcakes_lejos.jpg);
+        background-position-y:bottom ;
+    }
+
+    .card__background06 {
+        background-image: url(../img/torta_rosa.jpg);
+        background-position-x:right ;
+    }
+
+    .card__background01,
+    .card__background02,
+    .card__background03,
+    .card__background04,
+    .card__background05,
+    .card__background06{
+        background-size:cover;
+        background-repeat: no-repeat;
+    }
+
+    .card__text {
+        --padding: 3rem;
+        padding:var(--padding);
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        background:linear-gradient(
+             hsl(0 0% 0% / 0),
+             hsl(20 0% 0% / 0.7) 40%,
+             hsl(0 0% 0% / 1
+             )
+
+        );
+        transform: translateY(70%);
+        transition: transform 0.5s ease;
+    }
+
+    .card:hover .card__text {
+        transform: translateY(0%);
+    }
+
+    /* #000000b0 */
+    .card__title {
+        position: relative;
+        width: max-content;
+        text-align: left;
+        background-color: rgba(0, 0, 0, 0);
+        color: var(--clr-accent);
+        font-size: 3rem;
+        margin-bottom: 1em;
+    }
+
+    .card__title::after {
+        content: '';
+        height: 4px;
+        width: calc(100% + var(--padding));
+        background-color: var(--clr-brandSalmon);
+        position: absolute;
+        left:calc(var(--padding) * -1);
+        bottom: 0;
+        transition: transform 0.5s ease;
+        transform: scaleX(0);
+        transform-origin: left;
+    }
+
+    .card:hover .card__title::after {
+        transform: scaleX(1);
+    }
+
+    .card__description {
+        color: var(--clr-brandPink);
+        font-size: .8rem;
+        padding:0px;
+    }
+
+    .card:hover {
+        transform: scale(1.05);
+    }
+
+    /* .support__deco--left,
+    .support__deco--right{
+        background-size:auto;
+        background-repeat: repeat;
+    } */
+
+    .testimonials {
+        display: flex;
+        width: 90vw;
+        margin: auto;
+        align-items:center;
+    }
+
+    .testimonials__wrapper {
+        display: flex;
+        gap:20px;
+        justify-content: space-around;
+    }
+
+    .container__testimonials--title {
+        width: 80vw;
+        display: flex;
+        justify-content: center;
+    }
+
+    .testimonials__title {
+        text-align: center;
+        margin:0;
+    }
+
+    .testimonials__person {
+       width: 400px;
+    }
+
+    .review__p {
+        margin: auto;
+        text-align:center;
+    }
+
+    .support__info--detail {
+        font-size: 3rem;
+    }
+
+    .footerContent__wrapper{
+        display: flex;
+        flex-direction: row;
+        align-items:center;
+    }
+
+    .footer__logo {
+        max-width:300px ;
+    }
+    
+    .footer__nav {
+        gap:90px;
+    }
+
+    .footer__nav--item {
+        margin-top: .8em;
+    }
+
+    .footer__nav--item a{
+        font-size: 1.2rem;
+    }
+
+    .footer__socialmedia{
+        display: flex;
+        flex-direction: column;
+        margin-left: 8em;
+        margin-right: 3em;
+    }
+
+    .footer__socialmedia i{
+        margin:0;
+    }
+
+    .footer__copy {
+        padding: 0;
+        margin-bottom: 20px;
+    }
+
+}
+
+/* de 800px para abajo */
+@media only screen and (max-width:800px) {
+    .mainPost__info--img {
+        max-width: 100%;
+    } 
+
+    .footerContent__wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }
 
+/* de 1200 para abajo */
+@media only screen and (max-width:1200px) and (min-width:750px){
+    .testimonials__wrapper {
+        flex-direction:column;
+        align-items: center;
+    }
+
+    .testimonials__person {
+        width: 700px;
+    }
+}
